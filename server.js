@@ -50,6 +50,9 @@ app.get("/api/state/:state", (req, res) => {
     "Number of outpatient emergency department visits per 1000 long-stay resident days": 2.6,
   });
 });
+app.get("/", (req, res) => {
+  res.send("INFINITE API is running 🚀");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Server running on " + PORT));
