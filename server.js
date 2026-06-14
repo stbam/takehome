@@ -1,3 +1,5 @@
+const path = require("path");
+
 const express = require("express");
 const cors = require("cors");
 
@@ -50,8 +52,9 @@ app.get("/api/state/:state", (req, res) => {
     "Number of outpatient emergency department visits per 1000 long-stay resident days": 2.6,
   });
 });
+
 app.get("/", (req, res) => {
-  res.send("INFINITE API is running 🚀");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 const PORT = process.env.PORT || 3000;
